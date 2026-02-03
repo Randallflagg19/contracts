@@ -1,5 +1,5 @@
 {
-  "name": "@tapir/contracts",
+  "name": "@tapir1919/contracts",
   "version": "1.0.0",
   "description": "Protobufs definitions and generated TypeScript types",
   "scripts": {
