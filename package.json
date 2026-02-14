@@ -1,9 +1,23 @@
 {
   "name": "@tapir19/contracts",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Protobufs definitions and generated TypeScript types",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./gen/account": {
+      "types": "./dist/gen/account.d.ts",
+      "default": "./dist/gen/account.js"
+    },
+    "./gen/auth": {
+      "types": "./dist/gen/auth.d.ts",
+      "default": "./dist/gen/auth.js"
+    }
+  },
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "generate": "protoc --plugin=protoc-gen-ts_proto=$(yarn bin protoc-gen-ts_proto) -I ./proto ./proto/*.proto --ts_proto_out=./gen --ts_proto_opt=nestJs=true,package=omit"
